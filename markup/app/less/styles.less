@@ -5,6 +5,7 @@
 html,
 body {
     height: 100%;
+    overflow-y: hidden;
 }
 
 .wrap {
@@ -35,6 +36,7 @@ body {
         > div {
             overflow: hidden;
             padding: 3px 45px 0 0;
+            min-width: 120px;
         }
     }
     .photo {
@@ -109,7 +111,7 @@ body {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
-        align-items: flex-start;    
+        align-items: flex-start;   
 
         // align-content: center;
         // justify-content: flex-start;
@@ -133,7 +135,7 @@ body {
     }
 
     .event-wall {
-        // align-content: center;
+        // align-items: center;
         margin: 0 -12px;
     }
 
