@@ -1,0 +1,144 @@
+@import "_default.less";
+
+@spacing: 12px;
+
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    height: 100%;
+}
+
+.event-wall {
+    padding: 12px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.post {
+    background: #fff;
+    margin: @spacing;
+    padding: @spacing*2;
+    border-radius: 17px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 24px;
+    transition: all 0.3s ease;
+    header {
+        overflow: hidden;
+        position: relative;
+        > div {
+            overflow: hidden;
+            padding: 3px 45px 0 0;
+        }
+    }
+    .photo {
+        float: left;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 16px 0 0;
+    }
+    .author {
+        display: block;
+        font-size: 16px;
+        line-height: 20px;
+        color: #181818;
+        overflow: hidden;
+        position: relative;
+        white-space: nowrap;
+        &:after {
+            content: '';
+            right: 0;
+            background: rgba(255,255,255,.5);
+            background: linear-gradient(to right,rgba(255,255,255,0) 0,#fff 100%);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+        }
+    }
+    .position {
+        @font-size: 14px;
+        @line-height: 20px;
+        @lines-to-show: 2;
+        display: block;
+        overflow: hidden;
+        height: @line-height*@lines-to-show;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        font-size: @font-size;
+        line-height: @line-height;
+        color: #89909d;
+    }
+    .time {
+        position: absolute;
+        top: 1px;
+        right: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: #89909d;
+    }
+    .text {
+        margin: 10px 0 0;
+        transition: background 0.2s ease;
+        border-radius: 5px;
+    }
+    &.banned {
+        .text {
+            background: #dfe4e9;
+            padding: 16px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #89909d;
+        }
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .event-wall {
+        padding: 12px;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;    
+
+        // align-content: center;
+        // justify-content: flex-start;
+    }
+
+    .post {
+        width: calc(~"50% - "@spacing*2);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        min-width: 1176px;
+    }
+
+    .wrap {
+        height: 100%;
+        max-width: 1152px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .event-wall {
+        // align-content: center;
+        margin: 0 -12px;
+    }
+
+    .post {
+        width: 360px;
+    }
+}
+

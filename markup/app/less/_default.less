@@ -1,0 +1,31 @@
+// color
+@base: #000;
+@link: #3872e6;
+
+@fontDef: Arial, Helvetica, sans-serif;
+@font: Helvetica, @fontDef;
+
+// General Reset
+body {
+    background: #eff2f5;
+    margin: 0;
+    color: @base;
+    font: 12px/16px @font;
+    min-width: 320px;
+}
+
+img {
+    border-style: none;
+    max-width: 100%;
+}
+
+a {
+    color: @link;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    &:focus {
+        outline:none;
+    }
+}
